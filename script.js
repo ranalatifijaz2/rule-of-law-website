@@ -180,14 +180,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const contactForm = document.getElementById('contact-form');
   if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
-      if (!validateForm(contactForm)) {
-        e.preventDefault();
-        return;
-      }
-      // For Netlify, allow normal submission
-      // Show success message for demo (will be overridden by Netlify redirect)
       e.preventDefault();
-      showSuccess(contactForm, 'contact-success');
+      if (!validateForm(contactForm)) return;
+      submitForm(contactForm, 'contact-success');
     });
   }
 
@@ -195,12 +190,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const intakeForm = document.getElementById('intake-form');
   if (intakeForm) {
     intakeForm.addEventListener('submit', (e) => {
-      if (!validateForm(intakeForm)) {
-        e.preventDefault();
-        return;
-      }
       e.preventDefault();
-      showSuccess(intakeForm, 'intake-success');
+      if (!validateForm(intakeForm)) return;
+      submitForm(intakeForm, 'intake-success');
     });
   }
 
@@ -272,10 +264,39 @@ document.addEventListener('DOMContentLoaded', () => {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   }
 
-  function showSuccess(form, successId) {
-    form.style.display = 'none';
-    const success = document.getElementById(successId);
-    if (success) success.classList.add('visible');
+  function submitForm(form, successId) {
+    const formData = new FormData(form);
+    const submitBtn = form.querySelector('button[type="submit"]');
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Submitting...';
+    }
+
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(formData).toString()
+    })
+    .then(response => {
+      if (response.ok) {
+        form.style.display = 'none';
+        const success = document.getElementById(successId);
+        if (success) success.classList.add('visible');
+      } else {
+        alert('Something went wrong. Please try again or contact us directly.');
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Send Message';
+        }
+      }
+    })
+    .catch(() => {
+      alert('Network error. Please check your connection and try again.');
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send Message';
+      }
+    });
   }
 
   // Real-time field validation (remove error on input)
