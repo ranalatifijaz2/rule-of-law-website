@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Rule of Law — Reach out for a confidential consultation or submit a secure client intake brief for review by Senior Legal Council Rai Shahid Abbas.">
+  <title>Contact Us — Rule of Law | Senior Legal Counsel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Page Loader -->
+  <div class="page-loader"><div class="loader-icon"></div></div>
+
+  <!-- Scroll Progress -->
+  <div class="scroll-indicator"></div>
+
+  <!-- Mobile Nav Overlay -->
+  <div class="nav-overlay"></div>
+
+  <!-- ======== HEADER ======== -->
+  <header class="header header-solid" id="header">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">⚖</div>
+        <div class="logo-text">
+          <span class="firm-name">Rule of Law</span>
+          <span class="firm-tagline">Senior Legal Counsel</span>
+        </div>
+      </a>
+      <nav class="nav-links" id="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html" class="active">Contact</a>
+        <a href="#intake-section" class="nav-cta">Free Consultation</a>
+      </nav>
+      <div class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ======== PAGE HERO ======== -->
+  <section class="page-hero">
+    <div class="container">
+      <h1>Contact Us</h1>
+      <p>Get in touch with our legal team or submit a secure client intake brief for review.</p>
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <span class="current">Contact</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== CONTACT INFO CARDS ======== -->
+  <section class="section-padding" style="background: var(--off-white);">
+    <div class="container">
+      <div class="contact-info-grid stagger-children">
+        <div class="contact-info-card reveal">
+          <div class="contact-info-icon">📍</div>
+          <h3>Visit Our Office</h3>
+          <p>{{OFFICE_ADDRESS}}<br>Pakistan</p>
+        </div>
+        <div class="contact-info-card reveal">
+          <div class="contact-info-icon">📞</div>
+          <h3>Call Us</h3>
+          <p>{{PHONE_NUMBER}}<br>Mon–Sat, 9 AM – 6 PM</p>
+        </div>
+        <div class="contact-info-card reveal">
+          <div class="contact-info-icon">✉️</div>
+          <h3>Email Us</h3>
+          <p>{{EMAIL_ADDRESS}}<br>We respond within 24 hours</p>
+        </div>
+        <div class="contact-info-card reveal">
+          <div class="contact-info-icon">💬</div>
+          <h3>WhatsApp</h3>
+          <p>{{WHATSAPP_NUMBER}}<br>Include country code</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== FORMS SECTION ======== -->
+  <section class="form-section section-padding" id="intake-section">
+    <div class="container">
+      <div class="text-center reveal">
+        <span class="section-label">Get Started</span>
+        <h2 class="section-title">Submit Your Inquiry</h2>
+        <p class="section-subtitle">
+          Choose the appropriate form below. All information is encrypted and protected under strict attorney-client privilege.
+        </p>
+      </div>
+
+      <div class="form-wrapper reveal">
+        <!-- Form Tabs -->
+        <div class="form-tabs">
+          <button class="form-tab active" data-tab="panel-contact">Contact Form</button>
+          <button class="form-tab" data-tab="panel-intake">Secure Client Intake</button>
+        </div>
+
+        <!-- ==========================================
+             FORM 1: CONTACT FORM (Netlify)
+             ========================================== -->
+        <div id="panel-contact" class="form-panel active">
+          <form id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+            <!-- Hidden fields for Netlify -->
+            <input type="hidden" name="form-name" value="contact">
+            <p style="display:none;"><label>Don't fill this: <input name="bot-field"></label></p>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contact-name">Full Name <span class="required">*</span></label>
+                <input type="text" id="contact-name" name="name" placeholder="Your full legal name" required>
+                <span class="error-msg">Please enter your name</span>
+              </div>
+              <div class="form-group">
+                <label for="contact-email">Email Address <span class="required">*</span></label>
+                <input type="email" id="contact-email" name="email" placeholder="you@email.com" required>
+                <span class="error-msg">Please enter a valid email</span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-phone">Phone / WhatsApp <span class="required">*</span></label>
+              <input type="tel" id="contact-phone" name="phone" placeholder="+92 300 0000000" required>
+              <span class="error-msg">Please enter a valid phone number</span>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-message">Your Message <span class="required">*</span></label>
+              <textarea id="contact-message" name="message" rows="5" placeholder="Briefly describe your legal matter or question..." required></textarea>
+              <span class="error-msg">Please enter your message</span>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+              Send Message <span class="btn-icon">→</span>
+            </button>
+          </form>
+
+          <!-- Success State -->
+          <div id="contact-success" class="form-success">
+            <div class="success-icon">✓</div>
+            <h3>Message Sent Successfully!</h3>
+            <p>Thank you for reaching out. Our team will review your message and get back to you within 24 hours.</p>
+          </div>
+        </div>
+
+        <!-- ==========================================
+             FORM 2: CLIENT INTAKE FORM (Netlify)
+             ========================================== -->
+        <div id="panel-intake" class="form-panel">
+
+          <!-- Confidentiality Notice -->
+          <div class="confidentiality-notice">
+            <strong>Confidentiality Notice:</strong> All information submitted through this portal is encrypted and protected under strict attorney-client privilege. This intake brief will be reviewed directly by Senior Legal Council Rai Shahid Abbas and the designated legal team.
+          </div>
+
+          <form id="intake-form" name="client-intake" method="POST" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data" novalidate>
+            <!-- Hidden fields for Netlify -->
+            <input type="hidden" name="form-name" value="client-intake">
+            <p style="display:none;"><label>Don't fill this: <input name="bot-field"></label></p>
+
+            <!-- ---- Step 1: Primary Contact ---- -->
+            <div class="form-step-label">Step 1: Primary Contact Information</div>
+            <p class="form-step-desc">Let us know who we are representing.</p>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="intake-name">Full Legal Name <span class="required">*</span></label>
+                <input type="text" id="intake-name" name="full-name" placeholder="As it appears on your CNIC / Passport" required>
+                <span class="error-msg">Please enter your full legal name</span>
+              </div>
+              <div class="form-group">
+                <label for="intake-email">Email Address <span class="required">*</span></label>
+                <input type="email" id="intake-email" name="email" placeholder="you@email.com" required>
+                <span class="error-msg">Please enter a valid email</span>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="intake-phone">Phone / WhatsApp <span class="required">*</span></label>
+                <input type="tel" id="intake-phone" name="phone" placeholder="+92 300 0000000 (include country code)" required>
+                <span class="error-msg">Please enter a valid phone number</span>
+              </div>
+              <div class="form-group">
+                <label for="intake-location">Current Location (City/Country) <span class="required">*</span></label>
+                <select id="intake-location" name="location" required>
+                  <option value="">Select your location</option>
+                  <option value="Pakistan">Pakistan</option>
+                  <option value="UK">United Kingdom</option>
+                  <option value="UAE">United Arab Emirates</option>
+                  <option value="USA/Canada">USA / Canada</option>
+                  <option value="Other">Other</option>
+                </select>
+                <span class="error-msg">Please select your location</span>
+              </div>
+            </div>
+
+            <!-- ---- Step 2: Nature of Legal Matter ---- -->
+            <div class="form-step-label" style="margin-top: 20px;">Step 2: Nature of the Legal Matter</div>
+            <p class="form-step-desc">Please select the category that best describes your inquiry. This ensures your brief is routed to the correct specialist.</p>
+
+            <div class="form-group">
+              <label for="case-type">Select Category <span class="required">*</span></label>
+              <select id="case-type" name="case-type" required>
+                <option value="">— Select Category —</option>
+                <option value="civil-litigation">Civil Litigation &amp; Real Estate</option>
+                <option value="corporate-law">Corporate &amp; Commercial Law</option>
+                <option value="taxation">Taxation &amp; Wealth Management</option>
+                <option value="family-law">Family &amp; Personal Law</option>
+                <option value="criminal-law">Criminal Law</option>
+                <option value="overseas-services">Overseas Pakistani Services</option>
+              </select>
+              <span class="error-msg">Please select a case category</span>
+            </div>
+
+            <!-- ---- Step 3: Dynamic Case Specifics ---- -->
+
+            <!-- Civil Litigation -->
+            <div id="section-civil-litigation" class="dynamic-section">
+              <div class="form-step-label">Step 3: Civil Litigation Details</div>
+              <div class="form-group">
+                <label for="property-location">Property Location / Society</label>
+                <input type="text" id="property-location" name="property-location" placeholder="e.g., Mauza Kahna, DHA, Bahria Town">
+              </div>
+              <div class="form-group">
+                <label for="civil-issue">Nature of Issue <span class="required">*</span></label>
+                <select id="civil-issue" name="civil-issue">
+                  <option value="">Select issue type</option>
+                  <option value="Boundary Dispute">Boundary Dispute</option>
+                  <option value="Illegal Possession (Qabza)">Illegal Possession (Qabza)</option>
+                  <option value="Title Verification">Title Verification</option>
+                  <option value="Transfer/Registry">Transfer / Registry</option>
+                  <option value="Stay Order Required">Stay Order Required</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Is there an active court case regarding this property?</label>
+                <div class="radio-group">
+                  <label><input type="radio" name="active-court-case" value="Yes"> Yes</label>
+                  <label><input type="radio" name="active-court-case" value="No"> No</label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Corporate Law -->
+            <div id="section-corporate-law" class="dynamic-section">
+              <div class="form-step-label">Step 3: Corporate &amp; Commercial Details</div>
+              <div class="form-group">
+                <label for="company-name">Company Name (if applicable)</label>
+                <input type="text" id="company-name" name="company-name" placeholder="Your company name">
+              </div>
+              <div class="form-group">
+                <label for="corporate-issue">Nature of Issue <span class="required">*</span></label>
+                <select id="corporate-issue" name="corporate-issue">
+                  <option value="">Select issue type</option>
+                  <option value="MOU/Contract Drafting">MOU / Contract Drafting</option>
+                  <option value="SECP Registration">SECP Registration</option>
+                  <option value="Trademark/CCP Dispute">Trademark / CCP Dispute</option>
+                  <option value="Breach of Contract">Breach of Contract</option>
+                  <option value="Commercial Litigation">Commercial Litigation</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Are you seeking one-time counsel or ongoing retainer?</label>
+                <div class="radio-group">
+                  <label><input type="radio" name="counsel-type" value="One-Time"> One-Time</label>
+                  <label><input type="radio" name="counsel-type" value="Retainer"> Retainer</label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Taxation -->
+            <div id="section-taxation" class="dynamic-section">
+              <div class="form-step-label">Step 3: Taxation &amp; Wealth Details</div>
+              <div class="form-group">
+                <label for="tax-issue">Nature of Issue</label>
+                <select id="tax-issue" name="tax-issue">
+                  <option value="">Select issue type</option>
+                  <option value="Tax Planning">Tax Planning</option>
+                  <option value="Compliance Advisory">Compliance Advisory</option>
+                  <option value="Tax Tribunal">Tax Tribunal Representation</option>
+                  <option value="Wealth Structuring">Wealth Structuring</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Family Law -->
+            <div id="section-family-law" class="dynamic-section">
+              <div class="form-step-label">Step 3: Family &amp; Personal Law Details</div>
+              <p class="form-step-desc" style="color: var(--gold-dark); font-style: italic;">
+                Note: We handle all family matters with the highest level of discretion and empathy.
+              </p>
+              <div class="form-group">
+                <label for="family-issue">Nature of Issue <span class="required">*</span></label>
+                <select id="family-issue" name="family-issue">
+                  <option value="">Select issue type</option>
+                  <option value="Inheritance (Wirasat)">Inheritance (Wirasat)</option>
+                  <option value="Succession Certificate">Succession Certificate</option>
+                  <option value="Divorce / Khula">Divorce / Khula</option>
+                  <option value="Child Custody">Child Custody</option>
+                  <option value="General Consultation">General Consultation</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Criminal Law -->
+            <div id="section-criminal-law" class="dynamic-section">
+              <div class="form-step-label">Step 3: Criminal Law Details</div>
+              <div class="form-group">
+                <label for="criminal-issue">Nature of Issue <span class="required">*</span></label>
+                <select id="criminal-issue" name="criminal-issue">
+                  <option value="">Select issue type</option>
+                  <option value="Pre/Post-Arrest Bail">Pre / Post-Arrest Bail</option>
+                  <option value="White-Collar/Corporate Fraud">White-Collar / Corporate Fraud</option>
+                  <option value="General Criminal Defense">General Criminal Defense</option>
+                  <option value="FIR Registration/Quashing">FIR Registration / Quashing</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Is there an active FIR or Police investigation?</label>
+                <div class="radio-group">
+                  <label><input type="radio" name="active-fir" value="Yes"> Yes</label>
+                  <label><input type="radio" name="active-fir" value="No"> No</label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Overseas Services -->
+            <div id="section-overseas-services" class="dynamic-section">
+              <div class="form-step-label">Step 3: Overseas Pakistani Services</div>
+              <div class="form-group">
+                <label for="overseas-service">Service Required <span class="required">*</span></label>
+                <select id="overseas-service" name="overseas-service">
+                  <option value="">Select service type</option>
+                  <option value="Remote Power of Attorney (PoA)">Remote Power of Attorney (PoA)</option>
+                  <option value="Plot Verification & Monitoring">Plot Verification &amp; Monitoring</option>
+                  <option value="Repatriation of Assets">Repatriation of Assets</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Do you currently possess a valid NICOP?</label>
+                <div class="radio-group">
+                  <label><input type="radio" name="nicop" value="Yes"> Yes</label>
+                  <label><input type="radio" name="nicop" value="No"> No</label>
+                </div>
+              </div>
+            </div>
+
+            <!-- ---- Step 4: The Executive Brief ---- -->
+            <div class="form-step-label" style="margin-top: 28px;">Step 4: The Executive Brief</div>
+            <p class="form-step-desc">Provide a concise summary for the Senior Legal Council.</p>
+
+            <div class="form-group">
+              <label for="case-description">Brief Description of Your Matter <span class="required">*</span></label>
+              <textarea id="case-description" name="case-description" rows="6" maxlength="2500" placeholder="Please describe the current situation, any actions taken so far, and your desired legal outcome." required></textarea>
+              <span class="error-msg">Please describe your legal matter</span>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="deadline-date">Upcoming Deadlines or Court Dates</label>
+                <input type="date" id="deadline-date" name="deadline-date">
+              </div>
+              <div class="form-group">
+                <label>Secure Document Upload (Optional)</label>
+                <div class="file-upload">
+                  <input type="file" id="intake-document" name="document" accept=".pdf,.jpg,.jpeg,.png">
+                  <div class="file-upload-icon">📎</div>
+                  <div class="file-upload-text">
+                    <strong>Click to upload</strong> or drag and drop<br>
+                    PDF / JPG only — Max 10MB
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ---- Step 5: Submission ---- -->
+            <div class="form-checkbox">
+              <input type="checkbox" id="intake-consent" name="consent" required>
+              <label for="intake-consent">
+                I understand that submitting this form does not establish formal legal representation until a retainer agreement is signed with Rule of Law. <span class="required">*</span>
+              </label>
+            </div>
+            <div class="form-group">
+              <span class="error-msg">You must agree to the terms to continue</span>
+            </div>
+
+            <button type="submit" class="btn btn-burgundy" style="width: 100%; justify-content: center;">
+              Submit Secure Inquiry <span class="btn-icon">→</span>
+            </button>
+          </form>
+
+          <!-- Success State -->
+          <div id="intake-success" class="form-success">
+            <div class="success-icon">✓</div>
+            <h3>Intake Brief Submitted Successfully!</h3>
+            <p>Your secure intake brief has been received. Senior Legal Council Rai Shahid Abbas and the designated legal team will review your matter and respond within 24–48 hours.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Map Placeholder -->
+      <div class="map-placeholder reveal">
+        📍 Map — {{OFFICE_ADDRESS}} — Replace with embedded Google Maps iframe
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== FOOTER ======== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <div class="logo-icon">⚖</div>
+            <div class="logo-text">
+              <span class="firm-name">Rule of Law</span>
+              <span class="firm-tagline">Senior Legal Counsel</span>
+            </div>
+          </a>
+          <p>
+            Premier legal representation led by Senior Legal Council Rai Shahid Abbas. Committed to justice, integrity, and client success.
+          </p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Practice Areas</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Practice Areas</h4>
+          <ul class="footer-links">
+            <li><a href="services.html">Civil Litigation</a></li>
+            <li><a href="services.html">Corporate Law</a></li>
+            <li><a href="services.html">Criminal Defense</a></li>
+            <li><a href="services.html">Family Law</a></li>
+            <li><a href="services.html">Overseas Services</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact Info</h4>
+          <ul class="footer-contact">
+            <li><span class="icon">📍</span><span>{{OFFICE_ADDRESS}}<br>Pakistan</span></li>
+            <li><span class="icon">📞</span><span>{{PHONE_NUMBER}}</span></li>
+            <li><span class="icon">✉️</span><span>{{EMAIL_ADDRESS}}</span></li>
+            <li><span class="icon">💬</span><span>WhatsApp: {{WHATSAPP_NUMBER}}</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Rule of Law. All rights reserved.</span>
+        <span>Designed with precision. Deployed on <a href="#">Netlify</a>.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" aria-label="Back to top">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
